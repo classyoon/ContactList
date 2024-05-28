@@ -12,7 +12,7 @@ import SwiftData
 struct ContactListApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Item.self, Person.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +25,7 @@ struct ContactListApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PersonListView()
         }
         .modelContainer(sharedModelContainer)
     }
