@@ -39,6 +39,11 @@ struct PersonListView: View {
                     }
                     
                 }
+                .onDelete(perform: { indexSet in
+                    indexSet.forEach { index in
+                        modelContext.delete(people[index])
+                    }
+                })
             }
             .toolbar{
                 Button(action: {
