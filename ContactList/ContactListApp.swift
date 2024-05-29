@@ -11,8 +11,7 @@ import SwiftData
 @main
 struct ContactListApp: App {
     var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self, Person.self
+        let schema = Schema([Person.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

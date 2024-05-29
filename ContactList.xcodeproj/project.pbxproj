@@ -10,8 +10,6 @@
 		CA1F881E2C056A5800B9D3CC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1F881D2C056A5800B9D3CC /* Models.swift */; };
 		CA1F88202C06864A00B9D3CC /* PersonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1F881F2C06864A00B9D3CC /* PersonListView.swift */; };
 		CA92F1EB2C0521DB00FFF3D7 /* ContactListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA92F1EA2C0521DB00FFF3D7 /* ContactListApp.swift */; };
-		CA92F1ED2C0521DB00FFF3D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA92F1EC2C0521DB00FFF3D7 /* ContentView.swift */; };
-		CA92F1EF2C0521DB00FFF3D7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA92F1EE2C0521DB00FFF3D7 /* Item.swift */; };
 		CA92F1F12C0521DC00FFF3D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA92F1F02C0521DC00FFF3D7 /* Assets.xcassets */; };
 		CA92F1F42C0521DC00FFF3D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA92F1F32C0521DC00FFF3D7 /* Preview Assets.xcassets */; };
 		CA92F1FE2C0521DC00FFF3D7 /* ContactListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA92F1FD2C0521DC00FFF3D7 /* ContactListTests.swift */; };
@@ -41,8 +39,6 @@
 		CA1F881F2C06864A00B9D3CC /* PersonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListView.swift; sourceTree = "<group>"; };
 		CA92F1E72C0521DB00FFF3D7 /* ContactList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA92F1EA2C0521DB00FFF3D7 /* ContactListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListApp.swift; sourceTree = "<group>"; };
-		CA92F1EC2C0521DB00FFF3D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		CA92F1EE2C0521DB00FFF3D7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CA92F1F02C0521DC00FFF3D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA92F1F32C0521DC00FFF3D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CA92F1F92C0521DC00FFF3D7 /* ContactListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,8 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				CA92F1EA2C0521DB00FFF3D7 /* ContactListApp.swift */,
-				CA92F1EC2C0521DB00FFF3D7 /* ContentView.swift */,
-				CA92F1EE2C0521DB00FFF3D7 /* Item.swift */,
 				CA1F881D2C056A5800B9D3CC /* Models.swift */,
 				CA1F881F2C06864A00B9D3CC /* PersonListView.swift */,
 				CA92F1F02C0521DC00FFF3D7 /* Assets.xcassets */,
@@ -266,8 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA92F1ED2C0521DB00FFF3D7 /* ContentView.swift in Sources */,
-				CA92F1EF2C0521DB00FFF3D7 /* Item.swift in Sources */,
 				CA92F1EB2C0521DB00FFF3D7 /* ContactListApp.swift in Sources */,
 				CA1F881E2C056A5800B9D3CC /* Models.swift in Sources */,
 				CA1F88202C06864A00B9D3CC /* PersonListView.swift in Sources */,

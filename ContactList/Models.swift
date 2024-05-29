@@ -17,3 +17,12 @@ class Person {
     }
     static let example : [Person] = [Person(name: "Hansel"), Person(name: "Gretal")]
 }
+@Model
+class Quirk {
+    var descrip : String = ""
+    var person : Person?
+    init(descrip: String = "", person : Person? = nil) {
+        self.descrip = descrip
+        self.person = person
+    }
+}

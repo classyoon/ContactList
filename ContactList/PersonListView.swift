@@ -7,10 +7,34 @@
 
 import SwiftUI
 import SwiftData
+
+struct ProfilePicView :View {
+    var person : Person
+    var picSize : CGFloat
+    
+    var body: some View {
+            if let data = person.imageData, let uiImage = UIImage(data: data){
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: picSize, height: picSize)
+                    .clipShape(Circle())
+            }
+            else {
+                Image(systemName: "person")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: picSize, height: picSize)
+                    .clipShape(Circle())
+            }
+        }
+    
+}
 struct PersonListView: View {
     @Environment(\.modelContext) var modelContext
     @Query var people : [Person]
     @State private var newPerson : Person?
+    @State private var newQuirk : Quirk?
     var body: some View {
         NavigationStack{
             List {
@@ -19,21 +43,7 @@ struct PersonListView: View {
                         PersonEditView(person: person)
                     } label: {
                         HStack{
-                            
-                            if let data = person.imageData, let uiImage = UIImage(data: data){
-                                Image(uiImage: uiImage)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                            }
-                            else {
-                                Image(systemName: "person")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                            }
+                            ProfilePicView(person: person, picSize: 50)
                             Text(person.name)
                         }
                     }
@@ -45,17 +55,25 @@ struct PersonListView: View {
                     }
                 })
             }
+            .navigationTitle("My Contacts")
+            .toolbarBackground(.green,
+                               for: .navigationBar)
+            .toolbarBackground(.visible,
+                               for: .navigationBar)//THIS WAS IT
+//            .navigationBarTitleDisplayMode(.inline)
             .toolbar{
+                
+                
                 Button(action: {
                     newPerson = Person()
                     modelContext.insert(newPerson!)
                 }, label: {
                     Image(systemName: "plus")
                 })
+                
             }.sheet(item: $newPerson, content: { person in
                 PersonEditView(person: person)
             })
-                
             
         }
     }
@@ -69,20 +87,7 @@ struct PersonEditView: View {
         VStack{
             
             PhotosPicker("Select avatar", selection: $photosPickerItem, matching: .images)
-            if let data = person.imageData, let uiImage = UIImage(data: data){
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 200, height: 200)
-                    .clipShape(Circle())
-            }
-            else {
-                Image(systemName: "person")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 200, height: 200)
-                    .clipShape(Circle())
-            }
+            ProfilePicView(person: person, picSize: 200)
             TextField("Name", text: $person.name)
             
         }.onChange(of: photosPickerItem) {
