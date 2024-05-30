@@ -12,13 +12,44 @@ struct PersonEditView: View {
     @Bindable var person : Person
     @State private var photosPickerItem : PhotosPickerItem?
     @State private var profileImage : Image?
+    @Environment (\.modelContext) var modelContext
+    @Query private var quirks : [Quirk]
+    @State private var quirkString : String = ""
+    
     var body: some View {
         VStack{
             
             PhotosPicker("Select avatar", selection: $photosPickerItem, matching: .images)
             ProfilePicView(person: person, picSize: 200)
-            TextField("Name", text: $person.name).textFieldStyle(.automatic)
-          QuirkListView(person: person)
+            TextField("Name", text: $person.name).textFieldStyle(.roundedBorder)
+            GroupBox("Quirks") {
+                List{
+                    ForEach(person.quirks){ quirk in
+                        Text(quirk.descrip)
+                    }.onDelete(perform: { indexSet in
+                        indexSet.forEach { index in
+                            modelContext.delete(quirks[index])
+                        }
+                    })
+                }
+            }
+            VStack{
+                Text("Quirk").font(.caption)
+                HStack{
+                    TextField("Quirk", text: $quirkString)
+                        .textFieldStyle(.roundedBorder)
+                        .onSubmit {
+                           addQuirkToPerson()
+                        }
+                    Button(action: {
+                       addQuirkToPerson()
+                    }, label: {
+                        Image(systemName: "plus")
+                    })
+                }
+                
+            }.padding(.horizontal)
+  
             
         }
         .onChange(of: photosPickerItem) {
@@ -34,6 +65,12 @@ struct PersonEditView: View {
             }
         }
     }
+    
+    private func addQuirkToPerson(){
+        let newQuirk = Quirk(descrip: quirkString)
+        modelContext.insert(newQuirk)
+        newQuirk.person = person
+    }
 }
 #Preview {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
@@ -41,7 +78,6 @@ struct PersonEditView: View {
     Person.example.forEach { person in
         container.mainContext.insert(person)
     }
-    
     return NavigationStack{PersonEditView(person: Person.example[0]).modelContainer(container)}
     
 }
