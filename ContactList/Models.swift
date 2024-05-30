@@ -11,11 +11,13 @@ import SwiftData
 class Person {
     @Attribute(.externalStorage) var imageData : Data?
     var name : String = ""
-    init(imageData: Data? = nil, name: String = "") {
+    @Relationship(deleteRule: .nullify, inverse: \Quirk.person) var quirks : [Quirk] = []
+    init(imageData: Data? = nil, name: String = "", quirks : [Quirk] = []) {
         self.imageData = imageData
         self.name = name
+        self.quirks = quirks
     }
-    static let example : [Person] = [Person(name: "Hansel"), Person(name: "Gretal")]
+    static let example : [Person] = [Person(name: "Hansel", quirks: Quirk.example), Person(name: "Gretal")]
 }
 @Model
 class Quirk {
@@ -25,4 +27,5 @@ class Quirk {
         self.descrip = descrip
         self.person = person
     }
+    static let example : [Quirk] = [Quirk(descrip: "Has a dog."), Quirk(descrip: "Speaks French.")]
 }

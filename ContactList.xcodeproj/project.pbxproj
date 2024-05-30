@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CA1F881E2C056A5800B9D3CC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1F881D2C056A5800B9D3CC /* Models.swift */; };
 		CA1F88202C06864A00B9D3CC /* PersonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1F881F2C06864A00B9D3CC /* PersonListView.swift */; };
+		CA8F16A82C07DEF2005E7AA6 /* PersonEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F16A72C07DEF2005E7AA6 /* PersonEditView.swift */; };
+		CA8F16AA2C080E65005E7AA6 /* QuirkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F16A92C080E65005E7AA6 /* QuirkListView.swift */; };
 		CA92F1EB2C0521DB00FFF3D7 /* ContactListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA92F1EA2C0521DB00FFF3D7 /* ContactListApp.swift */; };
 		CA92F1F12C0521DC00FFF3D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA92F1F02C0521DC00FFF3D7 /* Assets.xcassets */; };
 		CA92F1F42C0521DC00FFF3D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA92F1F32C0521DC00FFF3D7 /* Preview Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		CA1F881D2C056A5800B9D3CC /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		CA1F881F2C06864A00B9D3CC /* PersonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListView.swift; sourceTree = "<group>"; };
+		CA8F16A72C07DEF2005E7AA6 /* PersonEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonEditView.swift; sourceTree = "<group>"; };
+		CA8F16A92C080E65005E7AA6 /* QuirkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuirkListView.swift; sourceTree = "<group>"; };
 		CA92F1E72C0521DB00FFF3D7 /* ContactList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA92F1EA2C0521DB00FFF3D7 /* ContactListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListApp.swift; sourceTree = "<group>"; };
 		CA92F1F02C0521DC00FFF3D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				CA92F1EA2C0521DB00FFF3D7 /* ContactListApp.swift */,
 				CA1F881D2C056A5800B9D3CC /* Models.swift */,
 				CA1F881F2C06864A00B9D3CC /* PersonListView.swift */,
+				CA8F16A72C07DEF2005E7AA6 /* PersonEditView.swift */,
+				CA8F16A92C080E65005E7AA6 /* QuirkListView.swift */,
 				CA92F1F02C0521DC00FFF3D7 /* Assets.xcassets */,
 				CA92F1F22C0521DC00FFF3D7 /* Preview Content */,
 			);
@@ -260,9 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8F16AA2C080E65005E7AA6 /* QuirkListView.swift in Sources */,
 				CA92F1EB2C0521DB00FFF3D7 /* ContactListApp.swift in Sources */,
 				CA1F881E2C056A5800B9D3CC /* Models.swift in Sources */,
 				CA1F88202C06864A00B9D3CC /* PersonListView.swift in Sources */,
+				CA8F16A82C07DEF2005E7AA6 /* PersonEditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

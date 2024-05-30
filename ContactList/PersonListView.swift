@@ -34,7 +34,6 @@ struct PersonListView: View {
     @Environment(\.modelContext) var modelContext
     @Query var people : [Person]
     @State private var newPerson : Person?
-    @State private var newQuirk : Quirk?
     var body: some View {
         NavigationStack{
             List {
@@ -78,32 +77,7 @@ struct PersonListView: View {
         }
     }
 }
-import PhotosUI
-struct PersonEditView: View {
-    @Bindable var person : Person
-    @State private var photosPickerItem : PhotosPickerItem?
-    @State private var profileImage : Image?
-    var body: some View {
-        VStack{
-            
-            PhotosPicker("Select avatar", selection: $photosPickerItem, matching: .images)
-            ProfilePicView(person: person, picSize: 200)
-            TextField("Name", text: $person.name)
-            
-        }.onChange(of: photosPickerItem) {
-            Task {
-                if let data = try? await photosPickerItem?.loadTransferable(type: Data.self) {
-                    if let uiImage = UIImage(data: data) {
-                        profileImage = Image(uiImage: uiImage)
-                        person.imageData = data
-                    }
-                } else {
-                    print("Failed")
-                }
-            }
-        }
-    }
-}
+
 
 
 #Preview {
